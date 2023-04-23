@@ -1,0 +1,212 @@
+
+/* global */
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --seafoam-lightest: hsl(162, 100%, 68%);
+  --seafoam-lighter: hsl(162, 84%, 64%);
+  --seafoam: hsl(162, 55%, 54%);
+  --seafoam-darker: hsl(162, 48%, 40%);
+  --seafoam-darkest: hsl(162, 48%, 33%);
+  --oblue: hsl(203, 100%, 93%);
+  --subtext_box-bg: hsl(207, 100%, 98%);
+  --subtext_box-border: hsl(0, 0%, 85%);
+  --subtext_box-text: hsl(0, 0%, 20%);
+}
+
+body {
+  background-color: var(--oblue);
+  text-align: center;
+  font-family: sans-serif;
+}
+
+section {
+  /* margin: 0 auto; */
+  margin-top: 1rem;
+  /* margin-bottom: 2.5rem; */
+}
+
+main {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: hsl(203, 89%, 33%);
+}
+
+a:visited {
+  color: hsl(282, 64%, 42%);
+}
+
+/* Utility */
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+em {
+  font-style: italic;
+}
+
+    /* scroll down arrow */
+#arrow_down {
+  color: hsl(0, 0%, 0%);
+  font-size: 1.5rem;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  animation: moveUpDown 1s ease-in-out infinite alternate;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+    /* END scroll down arrow */
+
+/* header */
+
+header {
+  margin-bottom: 1rem;
+}
+
+header #my_avatar {
+  margin-top: 0.5rem;
+  max-height: 100px;
+  max-width: 100px;
+  border-radius: 1000px;
+  transition: all 0.15s ease-out;
+  box-shadow: 0 0 5px #222, 0 0 6px hsl(162, 48%, 33%), 0 0 15px hsl(162, 100%, 68%);
+  cursor: pointer;
+}
+
+.main_title {
+  /* color: hsl(210, 53%, 43%); */
+  color: var(--seafoam-lightest);
+  text-shadow: #222 0px 0px 1px,
+                #222 0px 0px 3px,
+                #222 0px 0px 5px,
+                /* #222 0px 0px 9px, */
+                /* #222 0px 0px 12px, */
+              hsl(282, 64%, 42%) 0px -8px 10px,
+              hsl(282, 64%, 42%) 0px 8px 10px,
+              hsl(282, 64%, 42%) -8px 0px 10px,
+              hsl(282, 64%, 42%) 8px 0px 10px,
+              hsl(282, 64%, 42%) 0px 4px 6px,
+              hsl(282, 64%, 42%) 0px 2px 3px,
+              hsl(282, 64%, 42%) 0px -2px 3px,
+              hsl(282, 64%, 42%) 0px 24px 10px;
+  margin-top: 0.1rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.main_subtitle {
+  /* color: hsl(287, 14%, 87%); */
+  color: var(--oblue);
+  text-shadow: #000 0px 0px 3px, 
+              hsl(282, 64%, 42%) 0px 0px 5px,
+              hsl(282, 64%, 42%) 0px 0px 10px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+/* social links */
+
+section.social-links {
+  /* background: rgba(255, 0, 0, 0.2); */
+  /* width: min-content; */
+  margin: 0 auto;
+}
+
+#social-links__container {
+  /* background: rgba(255, 0, 0, 0.2); */
+  background: hsla(0, 0%, 96%, 0.7);
+  /* background: aliceblue; */
+  box-shadow: 2px 3px 8px #222;
+  border: 2px solid hsl(0, 0%, 75%);
+  border-radius: 0.4rem;
+  padding: 0.5rem 1rem;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.social-links__link + .social-links__link {
+  margin-top: 0.7rem;
+}
+
+.social-links a {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  /* display: inline-block; */
+  /* margin: 0 0.33rem; */
+}
+
+.social-links__user + .social-links__linktitle {
+  font-size: 1.2em;
+}
+
+.social-links__user:hover {
+  text-decoration: underline;
+}
+
+.social-links__site {
+  color: #222;
+}
+
+.social-links .social-links__site_subtext {
+  display: block;
+  font-size: 0.88rem;
+  border: 1px solid var(--subtext_box-border);
+  background-color: var(--subtext_box-bg);
+  border-radius: 5px;
+  padding: 1px;
+  margin-top: 2px;
+}
+.social-links .social-links__site_subtext p {
+  color: var(--subtext_box-text);
+}
+
+/* my sites */
+
+.my-sites .site + .site {
+  margin-top: 0.7rem;
+}
+
+.my-sites a {
+  text-decoration: none;
+  font-size: 1.2;
+}
+
+.my-sites a:hover {
+  text-decoration: underline;
+}
+
+.my-sites .favicon__site {
+  max-width: 16px;
+  max-height: 16px;
+}
+
+.my-sites .my-sites__subtext {
+  display: block;
+  font-size: 0.85rem;
+}
